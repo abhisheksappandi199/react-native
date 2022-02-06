@@ -1,6 +1,5 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React from 'react';
-import { StyleSheet,View } from 'react-native';
 import Default from './Default'
 import Axios from './Axios'
 import Redux from './Redux';

@@ -27,6 +27,7 @@ export default function App({ route }) {
       })}/>
       <Stack.Screen name="Basic" component={Basic} options={{title:"basics of native", headerBackTitle: "Home", headerTitleAlign: "left",headerTitleStyle: {color: "brown"}}}/>
     </Stack.Navigator>
+
   </NavigationContainer>
   );
 }

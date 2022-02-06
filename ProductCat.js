@@ -2,8 +2,8 @@ import React from 'react';
 import { View,Text, Alert,Image } from 'react-native';
 import { Button } from 'react-native'
 import { useNavigation, useRoute } from '@react-navigation/native';
-import { NavigationContainer } from '@react-navigation/native'
 import BottomTab from './BottomTab/BottomTab'
+import styles from './styles';
 
 export default function ProductCat() {
   const navigation = useNavigation();
@@ -28,7 +28,7 @@ export default function ProductCat() {
   }
 
   return (
-    <View>
+    <View style={styles.container}>
       <Text style={[{ margin: 10, justifyContent: "center" }]}>Welcome {route.params.email}...!</Text>
       <Button title="update Profile Pic"
         onPress={()=>handleUpdate()}
@@ -36,10 +36,7 @@ export default function ProductCat() {
       <Button title="go to Basic"
         onPress={()=>navigation.navigate("Basic")}
         />
-        <NavigationContainer>
-        <BottomTab />
-        </NavigationContainer>
-
+      <BottomTab />
     </View>
   )
 }
