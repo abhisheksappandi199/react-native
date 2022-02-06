@@ -1,12 +1,33 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import {Image} from 'react-native-elements'
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Home from './Home';
+import ProductCat from './ProductCat';
+import Basic from './Basic';
 
-export default function App() {
+const Stack = createNativeStackNavigator()
+// options={{ headerShown: false}}/>
+// options={{title:"Home",headerBackVisible:false}}
+export default function App({ route }) {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+    <Stack.Navigator screenOptions={{ headerStyle: {backgroundColor: "yellow"}, headerTintColor: "grey"}}>
+      <Stack.Screen name="Home" component={Home} options={{title:"Login"}}/> 
+      <Stack.Screen name="ProductCat" component={ProductCat} options={({route}) => ({
+        title: route.params.email,
+        headerLeft: () => (
+          <Image 
+            source={{ uri: route.params.img }}
+            style={{ height: 40, width: 40 }}
+            />
+        ),
+        headerBackVisible:false
+      })}/>
+      <Stack.Screen name="Basic" component={Basic} options={{title:"basics of native", headerBackTitle: "Home", headerTitleAlign: "left",headerTitleStyle: {color: "brown"}}}/>
+    </Stack.Navigator>
+  </NavigationContainer>
   );
 }
 
