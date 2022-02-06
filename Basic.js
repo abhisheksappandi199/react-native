@@ -89,7 +89,6 @@ export default function Basic() {
           <Fruits name={name} count={count} />
     
           <FlatList
-            style={[{ height: "10%" }]}
             keyExtractor={(ele) => ele.id}
             data={fruitsnveggies}
             renderItem={({ item }) => (

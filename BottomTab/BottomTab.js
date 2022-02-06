@@ -8,7 +8,7 @@ const Tab = createBottomTabNavigator()
 
 export default function BottomTab() {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator screenOptions={{ headerShown: false }}>
       <Tab.Screen name="Default" component={Default} />
       <Tab.Screen name="Axios" component={Axios} />
       <Tab.Screen name="Redux" component={Redux} />

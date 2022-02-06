@@ -13,7 +13,6 @@ export default function Home() {
   const navigation = useNavigation();
 
   const handleSubmit = () => {
-    console.log(email,pwd);
     if (email.includes("@gmail.com") && pwd) {
       navigation.navigate("ProductCat", {email:email, pwd:pwd, img:img})
       // setEmail('')
@@ -25,6 +24,7 @@ export default function Home() {
     } else {
       alert("invalid user or pwd")
     }
+    //navigation.navigate("ProductCat", {email:email, pwd:pwd, img:img})
   }
 
   return (
